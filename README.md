@@ -1,16 +1,6 @@
 # fultter_base_project
 
-A new Flutter project.
+Flutter で動画を再生するためのサンプルプロジェクト
+fultter_base_project をベースに動画をダウンロードして再生する機能を実装
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+video_player だけを用いた単純なものと chewie を使った動画プレイヤー的なものを実装
