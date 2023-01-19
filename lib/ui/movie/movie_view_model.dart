@@ -13,25 +13,22 @@ class MovieViewModel extends ChangeNotifier {
   }
 
   void init() async {
-    // final dir = await getApplicationDocumentsDirectory();
-    // final path = "${dir.path}/video/";
-    // var moviePath = "${path}demo3.mp4";
-    // _videoPlayerController = VideoPlayerController.file(File(moviePath))
     _videoPlayerController = VideoPlayerController.file(File(_url))
       ..initialize().then((_) {
-        _videoPlayerController?.play();
+        _videoPlayerController.setLooping(true);
+        _videoPlayerController.play();
       }).whenComplete(notifyListeners);
   }
 
   final String _url;
 
-  VideoPlayerController? get videoPlayerController => _videoPlayerController;
-  VideoPlayerController? _videoPlayerController;
+  VideoPlayerController get videoPlayerController => _videoPlayerController;
+  late VideoPlayerController _videoPlayerController;
 
   @override
   @mustCallSuper
   void dispose() {
     super.dispose();
-    _videoPlayerController?.dispose();
+    _videoPlayerController.dispose();
   }
 }

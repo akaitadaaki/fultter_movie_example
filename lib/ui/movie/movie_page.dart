@@ -19,6 +19,8 @@ class MoviePage extends HookConsumerWidget {
     final theme = ref.watch(appThemeProvider);
 
     final player = ref.watch(movieViewModelProvider(url).select((value) => value.videoPlayerController));
+    final isInitialized =
+        ref.watch(movieViewModelProvider(url).select((value) => value.videoPlayerController.value.isInitialized));
 
     return WillPopScope(
       onWillPop: () {
@@ -40,23 +42,23 @@ class MoviePage extends HookConsumerWidget {
             title: const Text("動画ページ"),
             centerTitle: true,
           ),
-          body: (player == null)
+          body: (isInitialized != true)
               ? const SizedBox()
               : Column(
                   children: [
                     AspectRatio(
                       aspectRatio: player.value.aspectRatio,
                       child: Stack(children: [
-                        AspectRatio(aspectRatio: player.value.aspectRatio, child: VideoPlayer(player)),
+                        VideoPlayer(player),
                         Align(
                           alignment: Alignment.bottomCenter,
                           child: VideoProgressIndicator(
                             player,
-                            allowScrubbing: true,
+                            allowScrubbing: false,
                           ),
                         )
                       ]),
-                    ),
+                    )
                   ],
                 )),
       // )
