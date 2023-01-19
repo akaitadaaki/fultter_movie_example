@@ -73,9 +73,9 @@ class AppTheme {
           )),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            primary: appColors.primary,
-            onPrimary: appColors.primaryButtonText,
-            onSurface: appColors.disabledButton,
+            backgroundColor: appColors.primary,
+            foregroundColor: appColors.primaryButtonText,
+            disabledForegroundColor: appColors.disabledButton,
             // onSurface: appColors.backgroundGray,
             textStyle: AppTextTheme(appColors).s18.bold(),
             minimumSize: const Size.fromHeight(40)),
@@ -83,7 +83,7 @@ class AppTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           backgroundColor: appColors.outline,
-          primary: appColors.outlineButtonText,
+          foregroundColor: appColors.outlineButtonText,
           textStyle: AppTextTheme(appColors).s18.bold(),
           minimumSize: const Size.fromHeight(40),
           side: BorderSide(color: appColors.outlineButtonText),
@@ -122,15 +122,15 @@ class AppTheme {
           )),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            primary: appColors.primary,
-            onPrimary: appColors.primaryButtonText,
+            backgroundColor: appColors.primary,
+            foregroundColor: appColors.primaryButtonText,
             textStyle: AppTextTheme(appColors).s18.bold(),
             minimumSize: const Size.fromHeight(40)),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
         backgroundColor: appColors.outline,
-        primary: appColors.outlineButtonText,
+        foregroundColor: appColors.outlineButtonText,
         textStyle: AppTextTheme(appColors).s18.bold(),
         minimumSize: const Size.fromHeight(40),
         side: BorderSide(color: appColors.outlineButtonText),
