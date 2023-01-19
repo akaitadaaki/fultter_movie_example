@@ -16,7 +16,9 @@ import 'main_view_model.dart';
 class MainPage extends HookConsumerWidget {
   MainPage({Key? key}) : super(key: key);
 
-  final TextEditingController _fileController = TextEditingController();
+  final TextEditingController _fileController =
+      TextEditingController(text: "https://www9.nhk.or.jp/das/movie/D0002080/D0002080183_00000_V_000.mp4");
+  // final TextEditingController _fileController = TextEditingController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
