@@ -4,3 +4,6 @@ Flutter で動画を再生するためのサンプルプロジェクト
 fultter_base_project をベースに動画をダウンロードして再生する機能を実装
 
 video_player だけを用いた単純なものと chewie を使った動画プレイヤー的なものを実装
+
+## 注意
+video_playerの制限によりiOSは実機でしか動きません
