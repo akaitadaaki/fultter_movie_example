@@ -63,12 +63,12 @@ class MainPage extends HookConsumerWidget {
                       width: 82.w,
                       child: ElevatedButton(
                         child: Text("Download", style: theme.textTheme.s10.sp()),
-                        onPressed: () {
-                          if (_fileController.text.isNotEmpty) {
-                            mainViewModel.downloadFile(_fileController.text);
-                            _fileController.text = "";
-                          }
-                        },
+                        onPressed: (_fileController.text.isEmpty)
+                            ? null
+                            : () {
+                                mainViewModel.downloadFile(_fileController.text);
+                                _fileController.text = "";
+                              },
                       ))
                 ])),
             Divider(
@@ -93,27 +93,26 @@ class MainPage extends HookConsumerWidget {
                 Expanded(
                     child: ElevatedButton(
                   child: Text("標準のみ", style: theme.textTheme.s10.sp()),
-                  onPressed: () => (mainViewModel.selectedIndex == null)
-                      //? null : print(movieFileList[mainViewModel.selectedIndex!]),
+                  onPressed: (mainViewModel.selectedIndex == null)
                       ? null
-                      : context.pushNamed(
-                          "movie",
-                          params: {'url': movieFileList[mainViewModel.selectedIndex!]},
-                        ),
+                      : () => context.pushNamed(
+                            "movie",
+                            params: {'url': movieFileList[mainViewModel.selectedIndex!]},
+                          ),
                 )),
                 Expanded(
                     child: ElevatedButton(
                   child: Text("chewie追加利用", style: theme.textTheme.s10.sp()),
-                  onPressed: () => (mainViewModel.selectedIndex == null)
+                  onPressed: (mainViewModel.selectedIndex == null)
                       ? null
-                      : context.pushNamed(
-                          "chewie",
-                          params: {
-                            "url": movieFileList[mainViewModel.selectedIndex!],
-                            "autoPlay": "true",
-                            "looping": "true",
-                          },
-                        ),
+                      : () => context.pushNamed(
+                            "chewie",
+                            params: {
+                              "url": movieFileList[mainViewModel.selectedIndex!],
+                              "autoPlay": "true",
+                              "looping": "true",
+                            },
+                          ),
                 )),
               ],
             ),
