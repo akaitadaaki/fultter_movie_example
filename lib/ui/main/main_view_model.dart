@@ -15,7 +15,7 @@ class MainViewModel extends ChangeNotifier {
     init();
   }
 
-  String inputName = "";
+  String inputUrl = "";
   late final String _videoPath;
   List<String> get fileList => _fileList;
   List<String> _fileList = [];

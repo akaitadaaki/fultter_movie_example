@@ -54,7 +54,7 @@ class MainPage extends HookConsumerWidget {
                       child: TextField(
                     controller: _fileController,
                     onChanged: (value) {
-                      mainViewModel.inputName = value;
+                      mainViewModel.inputUrl = value;
                     },
                   )),
                   SizedBox(
